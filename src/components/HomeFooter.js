@@ -246,9 +246,10 @@ export default function HomeFooter({ events, inModal }) {
         )}
         <div className="adresse">
           <h2>Adresse</h2>
-          <a href="https://maps.app.goo.gl/J2kWjzDk8sC9mBSa6">
-            Atelier Di Bernard <br />
-            97 rue Jean de Bernardy <br />
+          <a href="https://www.google.fr/maps/place/47+Rue+Jean+de+Bernardy,+13001+Marseille/@43.3027856,5.386779,1212m/data=!3m2!1e3!4b1!4m6!3m5!1s0x12c9c09ec8095aa5:0xcb659763fe0dcb81!8m2!3d43.3027856!4d5.3893539!16s%2Fg%2F11c4h31qlk?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D">
+            Atelier Algue
+            <br />
+            47 rue Jean de Bernardy <br />
             13001, Marseille
           </a>
         </div>
