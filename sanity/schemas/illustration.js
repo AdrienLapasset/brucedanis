@@ -159,5 +159,12 @@ export default {
       ],
       validation: (Rule) => Rule.required().min(1),
     },
+    {
+      name: "soldOut",
+      title: "Épuisé",
+      type: "boolean",
+      description: "Retire le bouton 'Commander' et affiche 'Épuisé'",
+      initialValue: false,
+    },
   ],
 };
