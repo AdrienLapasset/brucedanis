@@ -309,15 +309,19 @@ export default function IllustrationModal({ illustration, vacation }) {
             <div>{selectedFormat?.price}&nbsp;€</div>
           </div>
           <div className="description">{description}</div>
-          <a
-            className="buy-btn"
-            href={selectedFormat?.paymentUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Commander&nbsp;
-            <Image src={linkArrow} alt="Commander" width={10} height={10} />
-          </a>
+          {illustration.soldOut ? (
+            <div className="buy-btn">Épuisé</div>
+          ) : (
+            <a
+              className="buy-btn"
+              href={selectedFormat?.paymentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Commander&nbsp;
+              <Image src={linkArrow} alt="Commander" width={10} height={10} />
+            </a>
+          )}
           {vacation && <p className="vacation-notice">{vacation[0]?.text}</p>}
           {formats.length > 1 && (
             <>
