@@ -39,10 +39,18 @@ export default function IllustrationPage({
 }
 
 export const getStaticProps = async ({ params = {} }) => {
-  const illustrations = await getClient().fetch(ILLUSTRATIONS_QUERY);
-  const illustration = await getClient().fetch(ILLUSTRATION_QUERY, params);
-  const events = await getClient().fetch(EVENTS_QUERY);
-  const vacation = await getClient().fetch(VACATION_QUERY);
+  const illustrations = await getClient().fetch(ILLUSTRATIONS_QUERY, {
+    cache: "no-store",
+  });
+  const illustration = await getClient().fetch(ILLUSTRATION_QUERY, params, {
+    cache: "no-store",
+  });
+  const events = await getClient().fetch(EVENTS_QUERY, {
+    cache: "no-store",
+  });
+  const vacation = await getClient().fetch(VACATION_QUERY, {
+    cache: "no-store",
+  });
 
   return {
     props: {
@@ -56,7 +64,9 @@ export const getStaticProps = async ({ params = {} }) => {
 
 // Prepare Next.js to know which routes already exist
 export const getStaticPaths = async () => {
-  const paths = await getClient().fetch(ILLUSTRATIONS_SLUG_QUERY);
+  const paths = await getClient().fetch(ILLUSTRATIONS_SLUG_QUERY, {
+    cache: "no-store",
+  });
 
   return { paths, fallback: false };
 };
