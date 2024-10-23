@@ -37,6 +37,7 @@ export const ILLUSTRATION_QUERY = groq`*[_type == "illustration" && slug.current
       metadata
     }
   },
+  soldOut,
   "formats": formats[]{
     image {
         asset->{
@@ -47,7 +48,6 @@ export const ILLUSTRATION_QUERY = groq`*[_type == "illustration" && slug.current
     technique,
     dimensions,
     price,
-    soldOut,
     paymentUrl
   },
   "prev": *[_type == 'illustration' && category._ref == ^.category._ref && _createdAt < ^._createdAt] | order(_createdAt desc)[0]{
