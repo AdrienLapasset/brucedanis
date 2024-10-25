@@ -45,10 +45,8 @@ export default function Home({ illustrations, draftMode, events }) {
 
 export const getStaticProps = async ({ draftMode = false }) => {
   const client = getClient(draftMode ? token : undefined);
-  const illustrations = await client.fetch(ILLUSTRATIONS_QUERY, {
-    cache: "no-store",
-  });
-  const events = await client.fetch(EVENTS_QUERY, { cache: "no-store" });
+  const illustrations = await client.fetch(ILLUSTRATIONS_QUERY);
+  const events = await client.fetch(EVENTS_QUERY);
 
   return {
     props: {
@@ -57,5 +55,6 @@ export const getStaticProps = async ({ draftMode = false }) => {
       draftMode,
       token: draftMode ? token : "",
     },
+    revalidate: 60,
   };
 };
