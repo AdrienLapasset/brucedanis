@@ -38,9 +38,11 @@ export default function IllustrationPage({
   );
 }
 
-export const getStaticProps = async ({ params = {} }) => {
+export const getStaticProps = async ({ params }) => {
+  const { slug } = params;
+
   const illustrations = await getClient().fetch(ILLUSTRATIONS_QUERY);
-  const illustration = await getClient().fetch(ILLUSTRATION_QUERY);
+  const illustration = await getClient().fetch(ILLUSTRATION_QUERY, { slug });
   const events = await getClient().fetch(EVENTS_QUERY);
   const vacation = await getClient().fetch(VACATION_QUERY);
 
