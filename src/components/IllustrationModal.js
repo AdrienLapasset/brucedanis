@@ -309,7 +309,7 @@ export default function IllustrationModal({ illustration, vacation }) {
             <div>{selectedFormat?.price}&nbsp;€</div>
           </div>
           <div className="description">{description}</div>
-          {illustration.soldOut ? (
+          {selectedFormat?.soldOut ? (
             <div className="buy-btn">Épuisé</div>
           ) : (
             <a

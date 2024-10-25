@@ -17,7 +17,6 @@ export default function IllustrationPage({
   events,
   vacation,
 }) {
-  console.log("Illustration:", illustration);
   return (
     <>
       <Head>
