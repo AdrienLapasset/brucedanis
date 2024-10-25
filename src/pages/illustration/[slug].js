@@ -59,5 +59,5 @@ export const getStaticProps = async ({ params = {} }) => {
 export const getStaticPaths = async () => {
   const paths = await getClient().fetch(ILLUSTRATIONS_SLUG_QUERY);
 
-  return { paths, fallback: false, revalidate: 60 };
+  return { paths, fallback: false };
 };
