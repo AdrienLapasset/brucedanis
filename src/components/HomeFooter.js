@@ -146,6 +146,7 @@ export default function HomeFooter({ events, inModal }) {
   const [screenHeight, setScreenHeight] = useState();
   const [scrollY, setScrollY] = useState(0);
   const [isIntroTransition, setIsIntroTransition] = useState(false);
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const {
     isFooterMinimized,
     setIsFooterMinimized,
@@ -267,19 +268,15 @@ export default function HomeFooter({ events, inModal }) {
           </a>
         </div>
         <div className="credits">
-          <p>© 2024 Bruce d’Anis</p>
+          <p>© {currentYear} Bruce d’Anis</p>
           <p className="credits-links">
             Réalisé par&nbsp;
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://clementlapasset.dev/"
+              href="https://www.cascadestudio.fr/"
             >
-              Clément
-            </a>
-            &nbsp;et&nbsp;
-            <a target="_blank" rel="noreferrer" href="https://alapasset.dev/">
-              Adrien Lapasset
+              le studio Cascade
             </a>
           </p>
         </div>
